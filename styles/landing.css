@@ -1,0 +1,34 @@
+.latest_blog_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 2rem;
+    gap: 87px;
+}
+
+.nosotros_content {
+    display: flex;
+    gap: 2rem;
+    /* grid-template-columns: 25% 75%; */
+    margin-top: 2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nosotros_text {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    max-width: 458px;
+}
+
+.nosotros_img {
+    width: auto;
+    border-radius: 30px;
+    height: 450px;
+}
+
+.nosotros_fotos_exhibicion {
+    margin-top: 2rem;
+}
