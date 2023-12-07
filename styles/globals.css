@@ -1,0 +1,32 @@
+* {
+    font-family: "HelveticaNowDisplay", Helvetica;
+}
+
+body {
+    background: #f8f9fd;
+    margin: 0;
+}
+
+h2 {
+    color: var(--Negro, #000);
+
+    /* Titulo sección */
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 44px */
+    letter-spacing: -0.8px;
+}
+
+section {
+    margin: 64px 122px;
+}
+
+h3,
+h2,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
