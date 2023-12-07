@@ -5,42 +5,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
             rel="shortcut icon"
-            href="../assets/img/favicon.png"
+            href="../../assets/img/favicon.png"
             type="image/x-icon"
         />
-        <link rel="stylesheet" href="../styles/navbar.css" />
-        <link rel="stylesheet" href="../styles/hero.css" />
-        <link rel="stylesheet" href="../styles/blog-card.css" />
-        <link rel="stylesheet" href="../styles/globals.css" />
-        <link rel="stylesheet" href="../styles/team-member.css" />
-        <link rel="stylesheet" href="../styles/footer.css" />
+        <link rel="stylesheet" href="../../styles/navbar.css" />
+        <link rel="stylesheet" href="../../styles/blog-card.css" />
+        <link rel="stylesheet" href="../../styles/globals.css" />
+        <link rel="stylesheet" href="../../styles/footer.css" />
         <link
             rel="shortcut icon"
-            href="../assets/img/favicon.png"
+            href="../../assets/img/favicon.png"
             type="image/x-icon"
         />
         <link
             rel="stylesheet"
-            href="../assets/fonts/HelveticaNowDisplay/font.css"
+            href="../../assets/fonts/HelveticaNowDisplay/font.css"
         />
-        <title>
-            Sociedad de Inteligencia Artificial de la Facultad de Ingeniería -
-            SIAFI
-        </title>
+        <title>Contacto - SIAFI</title>
         <meta
             name="description"
             content="Bienvenido a la página de la Sociedad de Inteligencia Artificial de la Facultad de Ingeniería - SIAFI"
         />
     </head>
     <style>
-        .latest_blog_list {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            margin-top: 2rem;
-            gap: 87px;
+        #contact_content h2 {
+            margin-bottom: 2rem;
         }
-
-        .nosotros_content {
+        #contact_content div {
             display: flex;
             gap: 2rem;
             /* grid-template-columns: 25% 75%; */
@@ -49,7 +40,7 @@
             align-items: center;
         }
 
-        .nosotros_text {
+        .contact_text {
             display: flex;
             height: 100%;
             flex-direction: column;
@@ -58,14 +49,10 @@
             max-width: 458px;
         }
 
-        .nosotros_img {
+        .contact_img {
             width: auto;
             border-radius: 30px;
             height: 450px;
-        }
-
-        .nosotros_fotos_exhibicion {
-            margin-top: 2rem;
         }
     </style>
     <body>
@@ -74,7 +61,7 @@
             <div class="navbar_logo">
                 <a href="/">
                     <img
-                        src="../assets/img/logos/siafi-logo.svg"
+                        src="../../assets/img/logos/siafi-logo.svg"
                         alt="SIAFI Logo"
                         width="117"
                     />
@@ -84,112 +71,20 @@
                 <li><a href="/#nosotros">Nosotros</a></li>
                 <li><a href="/proyectos/">Proyectos</a></li>
                 <!-- <li><a href="/eventos/">Eventos</a></li> -->
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="/contacto/">Contacto</a></li>
+                <li><a href="/blog/" class="">Blog</a></li>
+                <li><a href="/contacto/" class="active">Contacto</a></li>
             </ul>
         </nav>
-        <!-- Hero (components/hero) -->
-        <header class="hero_container">
-            <img
-                src="../assets/img/hero/background-figure.svg"
-                class="hero_background_figure"
-                alt="background-figure"
-            />
-            <div class="hero_card_title">
-                <h1>
-                    Sociedad de Inteligencia Artificial de la Facultad de
-                    Ingeniería <span>UNAM</span>
-                </h1>
+
+        <section id="contact_content">
+            <h2>¡Contactanos!</h2>
+            <div>
                 <img
-                    src="../assets/img/hero/robot-blanco.png"
-                    alt="White robot"
+                    src="../../assets/img/landing/siafi-todos.jpg"
+                    alt="Todos en SIAFI!"
+                    class="contact_img"
                 />
-            </div>
-            <div></div>
-            <div class="hero_card_ig_histories">
-                <div class="ig_progress_shade"></div>
-                <div class="hero_card_ig_histories_top_ui">
-                    <div class="ig_progress">
-                        <div class="progress_bar">
-                            <div class="progress_bar_fill"></div>
-                        </div>
-                        <div class="progress_bar"></div>
-                        <div class="progress_bar"></div>
-                    </div>
-                    <!-- Username -->
-                    <div class="ig_username">
-                        <img
-                            src="../assets/img/logos/siafi-icon.png"
-                            alt="Instagram logo"
-                        />
-                        <p>siafi_unam</p>
-                    </div>
-                </div>
-            </div>
-            <p class="follow_us_instagram">
-                Siguenos en
-                <a href="https://www.instagram.com/unam.siafi/" target="_blank"
-                    >Instagram</a
-                >
-            </p>
-        </header>
-        <!-- Last blogs section -->
-        <section id="ultimos-blogs">
-            <h2>Nuestros Ultimos blogs</h2>
-            <div class="latest_blog_list">
-                <div class="blog_card">
-                    <a href="/blog/dummy">
-                        <img
-                            src="../assets/img/blogs/blogpost_dummy.png"
-                            alt="Blog post cover"
-                        />
-                        <div class="blog_card_content">
-                            <h5 class="blog_card_category">Categoría</h5>
-                            <h3 class="blog_card_title">Titulo</h3>
-                            <p class="blog_card_description">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quisquam, voluptatum.
-                            </p>
-                            <div class="blog_card_author">
-                                <img
-                                    src="../assets/img/logos/siafi-icon.png"
-                                    alt="Autor pf"
-                                />
-                                <p>Autor</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="blog_card">
-                    <a href="/blog/dummy">
-                        <img
-                            src="../assets/img/blogs/blogpost_dummy.png"
-                            alt="Blog post cover"
-                        />
-                        <div class="blog_card_content">
-                            <h5 class="blog_card_category">Categoría</h5>
-                            <h3 class="blog_card_title">Titulo</h3>
-                            <p class="blog_card_description">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quisquam, voluptatum.
-                            </p>
-                            <div class="blog_card_author">
-                                <img
-                                    src="../assets/img/logos/siafi-icon.png"
-                                    alt="Autor pf"
-                                />
-                                <p>Autor</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-        <!-- Sobre nosotros section -->
-        <section id="nosotros">
-            <h2>Sobre Nosotros</h2>
-            <div class="nosotros_content">
-                <p class="nosotros_text">
+                <p class="contact_text">
                     Li Europan lingues es membres del sam familie. Lor separat
                     existentie es un myth. Por scientie, musica, sport etc., li
                     tot Europa usa li sam vocabularium. Li lingues differe
@@ -197,25 +92,6 @@
                     vocabules. Omnicos directe al desirabilit? de un nov lingua
                     franca: on
                 </p>
-                <img
-                    src="../assets/img/landing/siafi-todos.jpg"
-                    alt="Todos en SIAFI!"
-                    class="nosotros_img"
-                />
-            </div>
-        </section>
-        <!-- Nuestro equipo section -->
-        <section>
-            <h2>Nuestro Equipo</h2>
-            <div class="nosotros_fotos_exhibicion">
-                <div class="photo_container">
-                    <img
-                        src="../assets/img/nuestro-equipo/christian.png"
-                        alt="Member photo"
-                    />
-                    <h6>Christian Alejandro Leyva Mercado</h6>
-                    <p>Lider de Administración</p>
-                </div>
             </div>
         </section>
 
@@ -226,7 +102,7 @@
                 <div>
                     <a href="/">
                         <img
-                            src="../assets/img/logos/siafi-logo-white.png"
+                            src="../../assets/img/logos/siafi-logo-white.png"
                             alt="SIAFI logo white"
                             class="footer_logo"
                         />
@@ -238,7 +114,7 @@
                             target="_blank"
                         >
                             <img
-                                src="../assets/img/footer/instagram-bubble.svg"
+                                src="../../assets/img/footer/instagram-bubble.svg"
                                 alt="Instagram"
                             />
                         </a>
@@ -247,7 +123,7 @@
                             target="_blank"
                         >
                             <img
-                                src="../assets/img/footer/facebook-bubble.svg"
+                                src="../../assets/img/footer/facebook-bubble.svg"
                                 alt="Facebook"
                             />
                         </a>
@@ -256,7 +132,7 @@
                             target="_blank"
                         >
                             <img
-                                src="../assets/img/footer/linkedin-bubble.svg"
+                                src="../../assets/img/footer/linkedin-bubble.svg"
                                 alt="LinkedIn"
                             />
                         </a>
@@ -265,7 +141,7 @@
                             target="_blank"
                         >
                             <img
-                                src="../assets/img/footer/tiktok-logo.svg"
+                                src="../../assets/img/footer/tiktok-logo.svg"
                                 alt="TikTok"
                             />
                         </a>
@@ -274,7 +150,7 @@
                             target="_blank"
                         >
                             <img
-                                src="../assets/img/footer/youtube-bubble.svg"
+                                src="../../assets/img/footer/youtube-bubble.svg"
                                 alt="TikTok"
                             />
                         </a>
@@ -321,7 +197,7 @@
                                 href="https://www.ingenieria.unam.mx/dimei/"
                                 target="_blank"
                                 ><img
-                                    src="../assets/img/logos/dimei-logo.png"
+                                    src="../../assets/img/logos/dimei-logo.png"
                                     alt="DIMEI"
                             /></a>
                         </li>
@@ -330,7 +206,7 @@
                                 href="https://www.ingenieria.unam.mx/cia/"
                                 target="_blank"
                                 ><img
-                                    src="../assets/img/logos/cia-logo.png"
+                                    src="../../assets/img/logos/cia-logo.png"
                                     alt="CIA"
                             /></a>
                         </li>
@@ -339,7 +215,7 @@
                                 href="https://www.ingenieria.unam.mx/"
                                 target="_blank"
                                 ><img
-                                    src="../assets/img/logos/fi-logo.png"
+                                    src="../../assets/img/logos/fi-logo.png"
                                     alt="Facultad de Ingeniería"
                             /></a>
                         </li>
