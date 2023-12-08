@@ -6,17 +6,22 @@ CREATE TABLE blogs (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     category VARCHAR(50) NOT NULL,
-    cover_image VARCHAR(255) NOT NULL,
+    cover_image MEDIUMBLOB,
+    -- Use MEDIUMBLOB for images
     description TEXT NOT NULL,
     author_name VARCHAR(100) NOT NULL,
-    author_photo VARCHAR(255) NOT NULL
+    author_photo MEDIUMBLOB,
+    -- Use MEDIUMBLOB for images
+    UNIQUE KEY title_unique (title) -- Optional: Ensure unique titles
 );
 -- SIAFI Projects table
 CREATE TABLE projects (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
-    cover_image VARCHAR(255) NOT NULL,
-    description TEXT NOT NULL
+    cover_image MEDIUMBLOB,
+    -- Use MEDIUMBLOB for images
+    description TEXT NOT NULL,
+    UNIQUE KEY title_unique (title) -- Optional: Ensure unique titles
 );
 -- SIAFI Admin users table
 CREATE TABLE admin_users (

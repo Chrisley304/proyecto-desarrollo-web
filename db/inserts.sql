@@ -19,3 +19,10 @@ VALUES (
         'SIAFI Team',
         'https://i.imgur.com/2X3X9Yw.png'
     );
+-- Contact form entries
+INSERT INTO contact_form_entries (name, email, description)
+VALUES (
+        'John Doe',
+        'john@mail.com',
+        'This is a test message'
+    );
