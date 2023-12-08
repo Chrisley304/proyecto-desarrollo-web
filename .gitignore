@@ -1,0 +1,5 @@
+# XAMPP Default Files
+xampp/
+
+# MacOS system files
+.DS_Store
