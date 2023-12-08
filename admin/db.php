@@ -2,10 +2,20 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "siafi_db";
+$dbname = "siafi_website";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+try {
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    // Set character set
+    $conn->set_charset("utf8mb4");
+} catch (Exception $e) {
+    $error_message = "Connection failed: " . $e->getMessage();
+
+    // Output JavaScript to display error in the console
+    echo "<script>console.error('$error_message');</script>";
+
+    // Terminate script execution
+    die($error_message);
 }
+?>

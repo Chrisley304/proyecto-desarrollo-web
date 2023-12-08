@@ -2,6 +2,11 @@
 session_start();
 include("db.php");
 
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+    header("Location: dashboard.php");
+    exit;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -11,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows == 1) {
         $_SESSION['loggedin'] = true;
-        header("Location: admin/dashboard.php");
+        header("Location: dashboard.php");
         exit;
     } else {
         $login_error = "Login failed. Invalid username or password.";
