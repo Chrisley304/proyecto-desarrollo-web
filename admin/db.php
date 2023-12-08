@@ -18,4 +18,3 @@ try {
     // Terminate script execution
     die($error_message);
 }
-?>
