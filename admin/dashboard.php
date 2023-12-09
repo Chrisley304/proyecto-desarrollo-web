@@ -5,7 +5,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     exit;
 }
 
-include("db.php"); // Include your database connection file
+include("db.php");
 
 // Fetch blogs and projects from the database
 $sqlBlogs = "SELECT * FROM blogs";

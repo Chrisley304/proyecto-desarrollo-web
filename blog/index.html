@@ -31,6 +31,11 @@
         #blog_content h2 {
             margin-bottom: 2rem;
         }
+        .blog_list {
+            display: grid;
+            gap: 87px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
 
         /* Estilos base */
         .navbar_container {
@@ -167,30 +172,8 @@
 
         <section id="blog_content">
             <h2>Blog</h2>
-            <div class="blog_list">
-                <div class="blog_card">
-                    <a href="/blog/dummy">
-                        <img
-                            src="../assets/img/blogs/blogpost_dummy.png"
-                            alt="Blog post cover"
-                        />
-                        <div class="blog_card_content">
-                            <h5 class="blog_card_category">Categoría</h5>
-                            <h3 class="blog_card_title">Titulo</h3>
-                            <p class="blog_card_description">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quisquam, voluptatum.
-                            </p>
-                            <div class="blog_card_author">
-                                <img
-                                    src="../assets/img/logos/siafi-icon.png"
-                                    alt="Autor pf"
-                                />
-                                <p>Autor</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+            <div class="blog_list" id="blog_list">
+                <!-- Here the script add the blogs -->
             </div>
         </section>
 
@@ -346,4 +329,5 @@
             });
         </script>
     </body>
+    <script src="../scripts/fetch-all-blogs.js"></script>
 </html>

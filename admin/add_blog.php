@@ -10,10 +10,10 @@ include("db.php");
 // Process blog form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
-        $title = $_POST['title'];
-        $category = $_POST['category'];
-        $description = $_POST['description'];
-        $author_name = $_POST['author_name'];
+        $title = utf8_encode($_POST['title']);
+        $category = utf8_encode($_POST['category']);
+        $description = utf8_encode($_POST['description']);
+        $author_name = utf8_encode($_POST['author_name']);
 
         // Handle image uploads
         $cover_image = file_get_contents($_FILES['cover_image']['tmp_name']);

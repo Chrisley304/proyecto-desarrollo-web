@@ -5,7 +5,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     exit;
 }
 
-include("db.php"); // Include your database connection file
+include("db.php");
 
 // Get the blog ID from the URL
 $blog_id = $_GET['id'];
@@ -20,10 +20,10 @@ $blog = $result->fetch_assoc();
 // Process blog form submission for editing
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
-        $title = $_POST['title'];
-        $category = $_POST['category'];
-        $description = $_POST['description'];
-        $author_name = $_POST['author_name'];
+        $title = utf8_encode($_POST['title']);
+        $category = utf8_encode($_POST['category']);
+        $description = utf8_encode($_POST['description']);
+        $author_name = utf8_encode($_POST['author_name']);
 
         // Handle image uploads (optional, update only if a new image is provided)
         if ($_FILES['cover_image']['size'] > 0) {

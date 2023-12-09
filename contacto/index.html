@@ -31,7 +31,7 @@
         #contact_content h2 {
             margin-bottom: 2rem;
         }
-        #contact_content div {
+        .contact_container {
             display: flex;
             gap: 2rem;
             /* grid-template-columns: 25% 75%; */
@@ -191,20 +191,35 @@
 
         <section id="contact_content">
             <h2>¡Contactanos!</h2>
-            <div>
+            <div class="contact_container">
                 <img
                     src="../assets/img/landing/siafi-todos.jpg"
                     alt="Todos en SIAFI!"
                     class="contact_img"
                 />
-                <p class="contact_text">
-                    Li Europan lingues es membres del sam familie. Lor separat
-                    existentie es un myth. Por scientie, musica, sport etc., li
-                    tot Europa usa li sam vocabularium. Li lingues differe
-                    solmen in li grammatica, li pronunciation e li plu commun
-                    vocabules. Omnicos directe al desirabilit? de un nov lingua
-                    franca: on
-                </p>
+                <div class="">
+                    <p class="contact_text">
+                        Si tienes alguna duda, comentario o sugerencia, no dudes
+                        en contactarnos. Estamos para servirte.
+                    </p>
+                    <form action="/api/process_contact_form.php" method="post">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required />
+
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" required />
+
+                        <label for="message">Mensaje:</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="4"
+                            required
+                        ></textarea>
+
+                        <button type="submit">Enviar Mensaje</button>
+                    </form>
+                </div>
             </div>
         </section>
 
