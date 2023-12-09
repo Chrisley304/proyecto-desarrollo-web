@@ -89,7 +89,17 @@
                         Si tienes alguna duda, comentario o sugerencia, no dudes
                         en contactarnos. Estamos para servirte.
                     </p>
-                    <form action="/api/process_contact_form.php" method="post">
+                    <!-- Dummy frame to cancel redirection -->
+                    <iframe
+                        name="dummyframe"
+                        id="dummyframe"
+                        style="display: none"
+                    ></iframe>
+                    <form
+                        action="/api/process_contact_form.php"
+                        target="dummyframe"
+                        method="post"
+                    >
                         <label for="name">Nombre:</label>
                         <input type="text" id="name" name="name" required />
 
