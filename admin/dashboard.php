@@ -106,21 +106,21 @@ $resultContactFormEntries = $conn->query($sqlContactFormEntries);
 
 <body>
     <div class="container">
-        <h1>Welcome to the Admin Dashboard</h1>
-        <a href="logout.php" class="logout">Logout</a>
+        <h1>Bienvenido al Panel de Administración</h1>
+        <a href="logout.php" class="logout">Cerrar sesión</a>
 
         <h2>Blogs</h2>
-        <a href="add_blog.php" class="add-button">Add New Blog</a>
+        <a href="add_blog.php" class="add-button">Agregar Nuevo Blog</a>
         <table>
             <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Category</th>
-                    <th>Cover Image</th>
-                    <th>Description</th>
-                    <th>Author</th>
-                    <th>Author Photo</th>
-                    <th>Actions</th>
+                    <th>Título</th>
+                    <th>Categoría</th>
+                    <th>Imagen de Portada</th>
+                    <th>Descripción</th>
+                    <th>Autor</th>
+                    <th>Foto del Autor</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -133,23 +133,23 @@ $resultContactFormEntries = $conn->query($sqlContactFormEntries);
                         <td><?php echo $row['author_name']; ?></td>
                         <td><img src="data:image/jpeg;base64,<?php echo base64_encode($row['author_photo']); ?>" alt="Author Photo"></td>
                         <td class="action-buttons">
-                            <a href="edit_blog.php?id=<?php echo $row['id']; ?>" class="edit-button">Edit</a>
-                            <a href="delete_blog.php?id=<?php echo $row['id']; ?>" class="delete-button">Delete</a>
+                            <a href="edit_blog.php?id=<?php echo $row['id']; ?>" class="edit-button">Editar</a>
+                            <a href="delete_blog.php?id=<?php echo $row['id']; ?>" class="delete-button">Eliminar</a>
                         </td>
                     </tr>
                 <?php } ?>
             </tbody>
         </table>
 
-        <h2>Projects</h2>
-        <a href="add_project.php" class="add-button">Add New Project</a>
+        <h2>Proyectos</h2>
+        <a href="add_project.php" class="add-button">Agregar Nuevo Proyecto</a>
         <table>
             <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Cover Image</th>
-                    <th>Description</th>
-                    <th>Actions</th>
+                    <th>Título</th>
+                    <th>Imagen de Portada</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -159,22 +159,22 @@ $resultContactFormEntries = $conn->query($sqlContactFormEntries);
                         <td><img src="data:image/jpeg;base64,<?php echo base64_encode($row['cover_image']); ?>" alt="Cover Image"></td>
                         <td><?php echo $row['description']; ?></td>
                         <td class="action-buttons">
-                            <a href="edit_project.php?id=<?php echo $row['id']; ?>" class="edit-button">Edit</a>
-                            <a href="delete_project.php?id=<?php echo $row['id']; ?>" class="delete-button">Delete</a>
+                            <a href="edit_project.php?id=<?php echo $row['id']; ?>" class="edit-button">Editar</a>
+                            <a href="delete_project.php?id=<?php echo $row['id']; ?>" class="delete-button">Eliminar</a>
                         </td>
                     </tr>
                 <?php } ?>
             </tbody>
         </table>
 
-        <h2>Contact Form Entries</h2>
+        <h2>Entradas de Formulario de Contacto</h2>
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Description</th>
-                    <th>Actions</th>
+                    <th>Nombre</th>
+                    <th>Correo Electrónico</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -184,7 +184,7 @@ $resultContactFormEntries = $conn->query($sqlContactFormEntries);
                         <td><?php echo $row['email']; ?></td>
                         <td><?php echo $row['description']; ?></td>
                         <td class="action-buttons">
-                            <a href="delete_contact.php?id=<?php echo $row['id']; ?>" class="delete-button">Delete</a>
+                            <a href="delete_contact.php?id=<?php echo $row['id']; ?>" class="delete-button">Eliminar</a>
                         </td>
                     </tr>
                 <?php } ?>

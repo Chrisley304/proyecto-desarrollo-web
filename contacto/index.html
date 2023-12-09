@@ -54,26 +54,139 @@
             border-radius: 30px;
             height: 450px;
         }
+
+        
+        /* Estilos base */
+        .navbar_container {
+            display: flex;
+            justify-content: space-between;
+            position: sticky;
+            align-items: center;
+            padding: 15px;
+            background-color: transparent;
+            color: #000; /* Letras negras */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar_links {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar_links li {
+            margin-right: 20px;
+        }
+
+        .navbar_links a {
+            text-decoration: none;
+            color: #000; /* Letras negras */
+            font-weight: bold;
+        }
+
+        /* Botón para dispositivos pequeños */
+        .navbar_toggler {
+            display: none;
+        }
+
+        /* Estilos adicionales cuando la barra es fija en la parte superior */
+        .navbar_container.fixed-top {
+            background-color: transparent;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ajusta según sea necesario */
+            color: #000; /* Letras negras */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+
+        /* Estilos para la lista de enlaces en dispositivos pequeños */
+        @media only screen and (max-width: 768px) {
+            .navbar_links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px; /* Ajusta según la altura de tu barra de navegación */
+                left: 0;
+                width: 100%;
+                background-color: #fff; /* Fondo blanco */
+                padding: 10px;
+            }
+
+            .navbar_links.show {
+                display: flex;
+            }
+
+            .navbar_toggler {
+                display: block; /* Asegúrate de que esté visible en dispositivos pequeños */
+            }
+        }
+        
+        footer {
+            background-color: #333; /* Color de fondo del footer */
+            color: #fff; /* Color del texto del footer */
+            padding: 20px;
+        }
+        
+        .footer_content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            text-align: center; /* Alineación centrada para todo el contenido */
+        }
+        
+        /* Ajustes para dispositivos pequeños */
+        @media only screen and (max-width: 768px) {
+            .footer_links_list {
+                width: 100%;
+                margin-top: 20px;
+            }
+        
+            .footer_links_list ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+        
+            .footer_links_list li {
+                width: 48%; /* Dos columnas con un pequeño espacio entre ellas */
+                margin-bottom: 10px;
+            }
+        }
+        .footer_socials {
+            margin: 0 auto; /* Centra elementos internos */
+            max-width: 300px; /* Ajusta según sea necesario */
+        }
+        /* Estilo para el aviso de copyright */
+        footer a {
+            margin: 0 auto; /* Centra elementos internos */
+            max-width: 300px; /* Ajusta según sea necesario */
+            text-align: center; /* Alineación centrada para el aviso de copyright */
+        }
+        
+        /* Estilo para el aviso de copyright */
+        footer a {
+            display: block;
+            margin-top: 20px;
+        }
     </style>
     <body>
         <!-- Navbar (components/navbar) -->
         <nav class="navbar_container">
             <div class="navbar_logo">
                 <a href="/">
-                    <img
-                        src="../assets/img/logos/siafi-logo.svg"
-                        alt="SIAFI Logo"
-                        width="117"
-                    />
+                    <img src="../assets/img/logos/siafi-logo.svg" alt="SIAFI Logo" width="117">
                 </a>
             </div>
-            <ul class="navbar_links">
+            <ul class="navbar_links" id="navbarLinks">
                 <li><a href="/#nosotros">Nosotros</a></li>
                 <li><a href="/proyectos/">Proyectos</a></li>
-                <!-- <li><a href="/eventos/">Eventos</a></li> -->
-                <li><a href="/blog/" class="">Blog</a></li>
+                <li><a href="/blog/">Blog</a></li>
                 <li><a href="/contacto/" class="active">Contacto</a></li>
             </ul>
+            <button class="navbar_toggler" id="navbarToggler">
+                <img src="../assets/img/logos/menu.svg" alt="Toggle Menu">
+            </button>
         </nav>
 
         <section id="contact_content">
@@ -243,11 +356,33 @@
                                     src="../assets/img/logos/fi-logo.png"
                                     alt="Facultad de Ingeniería"
                             /></a>
-                        </li>
+                        </li>                       
                         <li>© SIAFI 2024. México</li>
-                    </ul>
+                    </ul>                    
                 </div>
             </div>
+            <a>© SIAFI 2024. México</a>
         </footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const navbarLinks = document.getElementById('navbarLinks');
+                const navbarToggler = document.getElementById('navbarToggler');
+        
+                navbarToggler.addEventListener('click', function () {
+                    navbarLinks.classList.toggle('show');
+                });
+        
+                // Añadir clase "fixed-top" al hacer scroll hacia abajo
+                window.addEventListener('scroll', function () {
+                    const scrollY = window.scrollY || window.pageYOffset;
+        
+                    if (scrollY > 0) {
+                        document.querySelector('.navbar_container').classList.add('fixed-top');
+                    } else {
+                        document.querySelector('.navbar_container').classList.remove('fixed-top');
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
