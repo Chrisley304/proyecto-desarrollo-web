@@ -68,6 +68,7 @@
             margin-top: 2rem;
         }
     </style>
+
     <body>
         <!-- Navbar (components/navbar) -->
         <nav class="navbar_container">
@@ -136,8 +137,8 @@
         <!-- Last blogs section -->
         <section id="ultimos-blogs">
             <h2>Nuestros Ultimos blogs</h2>
-            <div class="latest_blog_list">
-                <div class="blog_card">
+            <div class="latest_blog_list" id="latest_blog_list">
+                <!-- <div class="blog_card">
                     <a href="/blog/dummy">
                         <img
                             src="./assets/img/blogs/blogpost_dummy.png"
@@ -159,30 +160,7 @@
                             </div>
                         </div>
                     </a>
-                </div>
-                <div class="blog_card">
-                    <a href="/blog/dummy">
-                        <img
-                            src="./assets/img/blogs/blogpost_dummy.png"
-                            alt="Blog post cover"
-                        />
-                        <div class="blog_card_content">
-                            <h5 class="blog_card_category">Categoría</h5>
-                            <h3 class="blog_card_title">Titulo</h3>
-                            <p class="blog_card_description">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quisquam, voluptatum.
-                            </p>
-                            <div class="blog_card_author">
-                                <img
-                                    src="./assets/img/logos/siafi-icon.png"
-                                    alt="Autor pf"
-                                />
-                                <p>Autor</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                </div> -->
             </div>
         </section>
         <!-- Sobre nosotros section -->
@@ -349,4 +327,5 @@
             </div>
         </footer>
     </body>
+    <script src="./scripts/fetch-latest-blogs.js"></script>
 </html>

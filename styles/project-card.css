@@ -8,7 +8,7 @@
     flex-shrink: 0;
     border-radius: 30px;
     border: 1px solid rgba(0, 0, 0, 0.5);
-    background: url("../assets/img/proyectos/walle.jpeg");
+    /* background: url("../assets/img/proyectos/walle.jpeg"); */
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -58,4 +58,18 @@
     font-weight: 400;
     line-height: 120%; /* 17.6px */
     letter-spacing: -0.32px;
+}
+
+.project_card_cover_image {
+    position: absolute;
+    top: 0;
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    overflow: hidden;
+    cursor: grab;
+    z-index: -1;
 }

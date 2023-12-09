@@ -5,13 +5,13 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     exit;
 }
 
-include("db.php"); // Include your database connection file
+include("db.php");
 
 // Process project form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
-        $title = $_POST['title'];
-        $description = $_POST['description'];
+        $title = utf8_encode($_POST['title']);
+        $description = utf8_encode($_POST['description']);
 
         // Handle image uploads
         $cover_image = file_get_contents($_FILES['cover_image']['tmp_name']);

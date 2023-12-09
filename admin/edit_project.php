@@ -5,7 +5,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     exit;
 }
 
-include("db.php"); // Include your database connection file
+include("db.php");
 
 // Get the project ID from the URL
 $project_id = $_GET['id'];
@@ -20,8 +20,8 @@ $project = $result->fetch_assoc();
 // Process project form submission for editing
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
-        $title = $_POST['title'];
-        $description = $_POST['description'];
+        $title = utf8_encode($_POST['title']);
+        $description = utf8_encode($_POST['description']);
 
         // Handle image uploads (optional, update only if a new image is provided)
         if ($_FILES['cover_image']['size'] > 0) {

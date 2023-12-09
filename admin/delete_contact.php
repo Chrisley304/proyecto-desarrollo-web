@@ -5,7 +5,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     exit;
 }
 
-include("db.php"); // Include your database connection file
+include("db.php");
 
 // Get the contact ID from the URL
 $contact_id = $_GET['id'];
