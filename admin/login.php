@@ -54,13 +54,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="login-container">
         <h2>Login</h2>
         <form method="post" action="">
-            <label for="username">Username:</label>
+            <label for="username">Usuario:</label>
             <input type="text" name="username" required><br>
 
-            <label for="password">Password:</label>
+            <label for="password">Contraseña:</label>
             <input type="password" name="password" required><br>
 
-            <input type="submit" value="Login">
+            <input type="submit" value="Entrar">
         </form>
         <?php if (isset($login_error)) { ?>
             <p class="error"><?php echo $login_error; ?></p>
