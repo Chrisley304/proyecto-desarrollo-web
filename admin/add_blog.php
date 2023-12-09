@@ -88,29 +88,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <h1>Add New Blog</h1>
+    <h1>Agregar nuevo Blog</h1>
 
     <form action="add_blog.php" method="post" enctype="multipart/form-data">
-        <label for="title">Title:</label>
+        <label for="title">Titulo:</label>
         <input type="text" name="title" required>
 
-        <label for="category">Category:</label>
+        <label for="category">Categoria:</label>
         <input type="text" name="category" required>
 
-        <label for="cover_image">Cover Image:</label>
+        <label for="cover_image">Portada:</label>
         <input type="file" name="cover_image" accept="image/*" required>
 
-        <label for="description">Description:</label>
+        <label for="description">Descripción:</label>
         <textarea name="description" rows="5" required></textarea>
 
-        <label for="author_name">Author Name:</label>
+        <label for="author_name">Nombre del autor:</label>
         <input type="text" name="author_name" required>
 
-        <label for="author_photo">Author Photo:</label>
+        <label for="author_photo">Foto del autor:</label>
         <input type="file" name="author_photo" accept="image/*" required>
 
-        <button type="submit">Add Blog</button>
-        <a href="dashboard.php" id="return-btn" class="button">Return to Dashboard</a>
+        <button type="submit">Agregar Blog</button>
+        <a href="dashboard.php" id="return-btn" class="button">Regresar</a>
     </form>
 </body>
 

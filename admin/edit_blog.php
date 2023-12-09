@@ -107,29 +107,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <h1>Edit Blog</h1>
+    <h1>Editar Blog</h1>
 
     <form action="edit_blog.php?id=<?php echo $blog_id; ?>" method="post" enctype="multipart/form-data">
-        <label for="title">Title:</label>
+        <label for="title">Titulo:</label>
         <input type="text" name="title" value="<?php echo $blog['title']; ?>" required>
 
-        <label for="category">Category:</label>
+        <label for="category">Categoria:</label>
         <input type="text" name="category" value="<?php echo $blog['category']; ?>" required>
 
-        <label for="cover_image">Cover Image:</label>
+        <label for="cover_image">Portada:</label>
         <input type="file" name="cover_image" accept="image/*">
 
-        <label for="description">Description:</label>
+        <label for="description">Descripción:</label>
         <textarea name="description" rows="5" required><?php echo $blog['description']; ?></textarea>
 
-        <label for="author_name">Author Name:</label>
+        <label for="author_name">Nombre del autor:</label>
         <input type="text" name="author_name" value="<?php echo $blog['author_name']; ?>" required>
 
-        <label for="author_photo">Author Photo:</label>
+        <label for="author_photo">Foto del autor:</label>
         <input type="file" name="author_photo" accept="image/*">
 
-        <button type="submit">Update Blog</button>
-        <a href="dashboard.php" id="return-btn" class="button">Return to Dashboard</a>
+        <button type="submit">Actualizar</button>
+        <a href="dashboard.php" id="return-btn" class="button">Regresar</a>
     </form>
 </body>
 
