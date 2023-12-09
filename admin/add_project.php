@@ -9,23 +9,27 @@ include("db.php"); // Include your database connection file
 
 // Process project form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $title = $_POST['title'];
-    $description = $_POST['description'];
+    try {
+        $title = $_POST['title'];
+        $description = $_POST['description'];
 
-    // Handle image uploads
-    $cover_image = file_get_contents($_FILES['cover_image']['tmp_name']);
+        // Handle image uploads
+        $cover_image = file_get_contents($_FILES['cover_image']['tmp_name']);
 
-    // Insert data into the projects table
-    $stmt = $conn->prepare("INSERT INTO projects (title, cover_image, description) VALUES (?, ?, ?)");
-    $stmt->bind_param("ssb", $title, $cover_image, $description);
+        // Insert data into the projects table
+        $stmt = $conn->prepare("INSERT INTO projects (title, cover_image, description) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $title, $cover_image, $description);
 
-    if ($stmt->execute()) {
-        echo "Project entry added successfully!";
-    } else {
-        echo "Error: " . $stmt->error;
+        if ($stmt->execute()) {
+            echo "Project entry added successfully!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage();
     }
-
-    $stmt->close();
 }
 ?>
 

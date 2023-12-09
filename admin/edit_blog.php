@@ -19,35 +19,39 @@ $blog = $result->fetch_assoc();
 
 // Process blog form submission for editing
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $title = $_POST['title'];
-    $category = $_POST['category'];
-    $description = $_POST['description'];
-    $author_name = $_POST['author_name'];
+    try {
+        $title = $_POST['title'];
+        $category = $_POST['category'];
+        $description = $_POST['description'];
+        $author_name = $_POST['author_name'];
 
-    // Handle image uploads (optional, update only if a new image is provided)
-    if ($_FILES['cover_image']['size'] > 0) {
-        $cover_image = file_get_contents($_FILES['cover_image']['tmp_name']);
-    } else {
-        $cover_image = $blog['cover_image'];
+        // Handle image uploads (optional, update only if a new image is provided)
+        if ($_FILES['cover_image']['size'] > 0) {
+            $cover_image = file_get_contents($_FILES['cover_image']['tmp_name']);
+        } else {
+            $cover_image = $blog['cover_image'];
+        }
+
+        if ($_FILES['author_photo']['size'] > 0) {
+            $author_photo = file_get_contents($_FILES['author_photo']['tmp_name']);
+        } else {
+            $author_photo = $blog['author_photo'];
+        }
+
+        // Update data in the blogs table
+        $stmt = $conn->prepare("UPDATE blogs SET title=?, category=?, cover_image=?, description=?, author_name=?, author_photo=? WHERE id=?");
+        $stmt->bind_param("ssssssi", $title, $category, $cover_image, $description, $author_name, $author_photo, $blog_id);
+
+        if ($stmt->execute()) {
+            echo "Blog entry updated successfully!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage();
     }
-
-    if ($_FILES['author_photo']['size'] > 0) {
-        $author_photo = file_get_contents($_FILES['author_photo']['tmp_name']);
-    } else {
-        $author_photo = $blog['author_photo'];
-    }
-
-    // Update data in the blogs table
-    $stmt = $conn->prepare("UPDATE blogs SET title=?, category=?, cover_image=?, description=?, author_name=?, author_photo=? WHERE id=?");
-    $stmt->bind_param("ssbsssi", $title, $category, $cover_image, $description, $author_name, $author_photo, $blog_id);
-
-    if ($stmt->execute()) {
-        echo "Blog entry updated successfully!";
-    } else {
-        echo "Error: " . $stmt->error;
-    }
-
-    $stmt->close();
 }
 ?>
 

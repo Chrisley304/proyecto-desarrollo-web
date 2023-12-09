@@ -19,27 +19,31 @@ $project = $result->fetch_assoc();
 
 // Process project form submission for editing
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $title = $_POST['title'];
-    $description = $_POST['description'];
+    try {
+        $title = $_POST['title'];
+        $description = $_POST['description'];
 
-    // Handle image uploads (optional, update only if a new image is provided)
-    if ($_FILES['cover_image']['size'] > 0) {
-        $cover_image = file_get_contents($_FILES['cover_image']['tmp_name']);
-    } else {
-        $cover_image = $project['cover_image'];
+        // Handle image uploads (optional, update only if a new image is provided)
+        if ($_FILES['cover_image']['size'] > 0) {
+            $cover_image = file_get_contents($_FILES['cover_image']['tmp_name']);
+        } else {
+            $cover_image = $project['cover_image'];
+        }
+
+        // Update data in the projects table
+        $stmt = $conn->prepare("UPDATE projects SET title=?, cover_image=?, description=? WHERE id=?");
+        $stmt->bind_param("sssi", $title, $cover_image, $description, $project_id);
+
+        if ($stmt->execute()) {
+            echo "Project entry updated successfully!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage();
     }
-
-    // Update data in the projects table
-    $stmt = $conn->prepare("UPDATE projects SET title=?, cover_image=?, description=? WHERE id=?");
-    $stmt->bind_param("sssi", $title, $cover_image, $description, $project_id);
-
-    if ($stmt->execute()) {
-        echo "Project entry updated successfully!";
-    } else {
-        echo "Error: " . $stmt->error;
-    }
-
-    $stmt->close();
 }
 ?>
 

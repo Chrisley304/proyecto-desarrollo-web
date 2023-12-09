@@ -9,26 +9,30 @@ include("db.php");
 
 // Process blog form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $title = $_POST['title'];
-    $category = $_POST['category'];
-    $description = $_POST['description'];
-    $author_name = $_POST['author_name'];
+    try {
+        $title = $_POST['title'];
+        $category = $_POST['category'];
+        $description = $_POST['description'];
+        $author_name = $_POST['author_name'];
 
-    // Handle image uploads
-    $cover_image = file_get_contents($_FILES['cover_image']['tmp_name']);
-    $author_photo = file_get_contents($_FILES['author_photo']['tmp_name']);
+        // Handle image uploads
+        $cover_image = file_get_contents($_FILES['cover_image']['tmp_name']);
+        $author_photo = file_get_contents($_FILES['author_photo']['tmp_name']);
 
-    // Insert data into the blogs table
-    $stmt = $conn->prepare("INSERT INTO blogs (title, category, cover_image, description, author_name, author_photo) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssbsss", $title, $category, $cover_image, $description, $author_name, $author_photo);
+        // Insert data into the blogs table
+        $stmt = $conn->prepare("INSERT INTO blogs (title, category, cover_image, description, author_name, author_photo) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssss", $title, $category, $cover_image, $description, $author_name, $author_photo);
 
-    if ($stmt->execute()) {
-        echo "Blog entry added successfully!";
-    } else {
-        echo "Error: " . $stmt->error;
+        if ($stmt->execute()) {
+            echo "Blog entry added successfully!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage();
     }
-
-    $stmt->close();
 }
 ?>
 
