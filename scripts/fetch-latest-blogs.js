@@ -9,7 +9,7 @@ fetch("/api/get_latest_blogs.php")
         data.forEach((blog) => {
             let blogObject = `
             <div class="blog_card">
-                <a href="/blog/${blog.id}">
+                <a href="/blog/detalle.php?id=${blog.id}">
                     <div class="blog_card_image_container">
                         <img
                             src="data:image/png;base64,${blog.cover_image}",

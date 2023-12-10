@@ -55,14 +55,12 @@
             height: 450px;
         }
 
-        
         /* Estilos base */
         .navbar_container {
             display: flex;
             justify-content: space-between;
             position: sticky;
             align-items: center;
-            padding: 15px;
             background-color: transparent;
             color: #000; /* Letras negras */
             transition: background-color 0.3s ease, color 0.3s ease;
@@ -99,7 +97,6 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-
         /* Estilos para la lista de enlaces en dispositivos pequeños */
         @media only screen and (max-width: 768px) {
             .navbar_links {
@@ -121,33 +118,32 @@
                 display: block; /* Asegúrate de que esté visible en dispositivos pequeños */
             }
         }
-        
+
         footer {
-            background-color: #333; /* Color de fondo del footer */
+            /* Color de fondo del footer */
             color: #fff; /* Color del texto del footer */
-            padding: 20px;
         }
-        
+
         .footer_content {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             text-align: center; /* Alineación centrada para todo el contenido */
         }
-        
+
         /* Ajustes para dispositivos pequeños */
         @media only screen and (max-width: 768px) {
             .footer_links_list {
                 width: 100%;
                 margin-top: 20px;
             }
-        
+
             .footer_links_list ul {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
             }
-        
+
             .footer_links_list li {
                 width: 48%; /* Dos columnas con un pequeño espacio entre ellas */
                 margin-bottom: 10px;
@@ -163,7 +159,7 @@
             max-width: 300px; /* Ajusta según sea necesario */
             text-align: center; /* Alineación centrada para el aviso de copyright */
         }
-        
+
         /* Estilo para el aviso de copyright */
         footer a {
             display: block;
@@ -184,7 +180,8 @@
             margin-bottom: 8px;
         }
 
-        input, textarea {
+        input,
+        textarea {
             width: 100%;
             padding: 8px;
             margin-bottom: 16px;
@@ -212,51 +209,55 @@
             }
         }
         /* Estilos para radio buttons y checkboxes */
-input[type="radio"],
-input[type="checkbox"] {
-    margin-right: 5px; /* Añade un espacio entre el input y la etiqueta */
-}
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px; /* Añade un espacio entre el input y la etiqueta */
+        }
 
-/* Estilos específicos para los checkboxes */
-input[type="checkbox"] {
-    margin-bottom: 8px; /* Espacio inferior para checkboxes */
-}
+        /* Estilos específicos para los checkboxes */
+        input[type="checkbox"] {
+            margin-bottom: 8px; /* Espacio inferior para checkboxes */
+        }
 
-/* Estilos para el contenedor de radio buttons y checkboxes */
-.radio-container,
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px; /* Espacio entre grupos de radio buttons y checkboxes */
-}
+        /* Estilos para el contenedor de radio buttons y checkboxes */
+        .radio-container,
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px; /* Espacio entre grupos de radio buttons y checkboxes */
+        }
 
-/* Estilos para el select */
-select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    appearance: none; /* Elimina el estilo nativo del sistema operativo */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234CAF50' width='18px' height='18px'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 8px top 50%;
-}
+        /* Estilos para el select */
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            appearance: none; /* Elimina el estilo nativo del sistema operativo */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234CAF50' width='18px' height='18px'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 8px top 50%;
+        }
 
-/* Estilos para el mensaje de confirmación */
-#confirmation-message {
-    color: #4CAF50;
-    font-weight: bold;
-    margin-top: 10px;
-}
+        /* Estilos para el mensaje de confirmación */
+        #confirmation-message {
+            color: #4caf50;
+            font-weight: bold;
+            margin-top: 10px;
+        }
     </style>
     <body>
         <!-- Navbar (components/navbar) -->
         <nav class="navbar_container">
             <div class="navbar_logo">
                 <a href="/">
-                    <img src="../assets/img/logos/siafi-logo.svg" alt="SIAFI Logo" width="117">
+                    <img
+                        src="../assets/img/logos/siafi-logo.svg"
+                        alt="SIAFI Logo"
+                        width="117"
+                    />
                 </a>
             </div>
             <ul class="navbar_links" id="navbarLinks">
@@ -266,7 +267,7 @@ select {
                 <li><a href="/contacto/" class="active">Contacto</a></li>
             </ul>
             <button class="navbar_toggler" id="navbarToggler">
-                <img src="../assets/img/logos/menu.svg" alt="Toggle Menu">
+                <img src="../assets/img/logos/menu.svg" alt="Toggle Menu" />
             </button>
         </nav>
 
@@ -288,7 +289,8 @@ select {
                         name="dummyframe"
                         id="dummyframe"
                         style="display: none"
-                    ></iframe><br>
+                    ></iframe
+                    ><br />
                     <!--<form action="/api/process_contact_form.php" target="dummyframe" method="post">
                         <label for="name">Nombre:</label>
                         <input type="text" id="name" name="name" required />
@@ -317,42 +319,74 @@ select {
                         <button type="submit">Enviar Mensaje</button>
                     </form>-->
 
-                    <form action="/api/process_contact_form.php" target="dummyframe" method="post">
+                    <form
+                        action="/api/process_contact_form.php"
+                        target="dummyframe"
+                        method="post"
+                    >
                         <label for="name">Nombre:</label>
                         <input type="text" id="name" name="name" required />
-                    
+
                         <!-- Grupo de radio buttons para Género -->
-                        <label>Género:</label>     
-                        <div class="radio-container">                                                   
+                        <label>Género:</label>
+                        <div class="radio-container">
                             <label for="Masculino">Masculino</label>
-                            <input type="radio" id="male" name="genero" value="Masculino" required />                            
+                            <input
+                                type="radio"
+                                id="male"
+                                name="genero"
+                                value="Masculino"
+                                required
+                            />
                             <label for="Femenino">Femenino</label>
-                            <input type="radio" id="female" name="genero" value="Femenino" required />
+                            <input
+                                type="radio"
+                                id="female"
+                                name="genero"
+                                value="Femenino"
+                                required
+                            />
                         </div>
-                    
+
                         <label for="email">Correo electrónico:</label>
                         <input type="email" id="email" name="email" required />
-                    
+
                         <!-- Checkbox para notificaciones -->
                         <div class="checkbox-container">
-                            <label for="notificaciones">¿Desea recibir notificaciones?</label>
-                            <input type="checkbox" id="notificaciones" name="notificaciones" value="yes" />
+                            <label for="notificaciones"
+                                >¿Desea recibir notificaciones?</label
+                            >
+                            <input
+                                type="checkbox"
+                                id="notificaciones"
+                                name="notificaciones"
+                                value="yes"
+                            />
                         </div>
-                    
+
                         <label for="carrera">Carrera:</label>
                         <select id="carrera" name="carrera" required>
-                            <option value="Ingeniería en Computación">Ingeniería en Computación</option>
-                            <option value="Ingeniería Eléctrica Electrónica">Ingeniería Eléctrica Electrónica</option>
-                            <option value="Ingeniería en Telecomunicaciones">Ingeniería en Telecomunicaciones</option>
+                            <option value="Ingeniería en Computación">
+                                Ingeniería en Computación
+                            </option>
+                            <option value="Ingeniería Eléctrica Electrónica">
+                                Ingeniería Eléctrica Electrónica
+                            </option>
+                            <option value="Ingeniería en Telecomunicaciones">
+                                Ingeniería en Telecomunicaciones
+                            </option>
                         </select>
-                    
+
                         <label for="message">Mensaje:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                    
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="4"
+                            required
+                        ></textarea>
+
                         <button type="submit">Enviar Mensaje</button>
                     </form>
-                    
-
                 </div>
             </div>
         </section>
@@ -480,30 +514,34 @@ select {
                                     src="../assets/img/logos/fi-logo.png"
                                     alt="Facultad de Ingeniería"
                             /></a>
-                        </li>                       
+                        </li>
                         <li>© SIAFI 2024. México</li>
-                    </ul>                    
+                    </ul>
                 </div>
             </div>
             <a>© SIAFI 2024. México</a>
         </footer>
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const navbarLinks = document.getElementById('navbarLinks');
-                const navbarToggler = document.getElementById('navbarToggler');
-        
-                navbarToggler.addEventListener('click', function () {
-                    navbarLinks.classList.toggle('show');
+            document.addEventListener("DOMContentLoaded", function () {
+                const navbarLinks = document.getElementById("navbarLinks");
+                const navbarToggler = document.getElementById("navbarToggler");
+
+                navbarToggler.addEventListener("click", function () {
+                    navbarLinks.classList.toggle("show");
                 });
-        
+
                 // Añadir clase "fixed-top" al hacer scroll hacia abajo
-                window.addEventListener('scroll', function () {
+                window.addEventListener("scroll", function () {
                     const scrollY = window.scrollY || window.pageYOffset;
-        
+
                     if (scrollY > 0) {
-                        document.querySelector('.navbar_container').classList.add('fixed-top');
+                        document
+                            .querySelector(".navbar_container")
+                            .classList.add("fixed-top");
                     } else {
-                        document.querySelector('.navbar_container').classList.remove('fixed-top');
+                        document
+                            .querySelector(".navbar_container")
+                            .classList.remove("fixed-top");
                     }
                 });
             });
