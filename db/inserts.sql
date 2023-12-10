@@ -20,9 +20,12 @@ VALUES (
         'https://i.imgur.com/2X3X9Yw.png'
     );
 -- Contact form entries
-INSERT INTO contact_form_entries (name, email, description)
+INSERT INTO contact_form_entries (name, email, description, genero, notificaciones, carrera)
 VALUES (
         'John Doe',
         'john@mail.com',
-        'Mensaje de prueba'
+        'Mensaje de prueba',
+        'Hombre',
+        'No',
+        'Ingeniería en Computación'
     );

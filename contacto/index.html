@@ -211,6 +211,45 @@
                 max-width: 100%;
             }
         }
+        /* Estilos para radio buttons y checkboxes */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px; /* Añade un espacio entre el input y la etiqueta */
+}
+
+/* Estilos específicos para los checkboxes */
+input[type="checkbox"] {
+    margin-bottom: 8px; /* Espacio inferior para checkboxes */
+}
+
+/* Estilos para el contenedor de radio buttons y checkboxes */
+.radio-container,
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px; /* Espacio entre grupos de radio buttons y checkboxes */
+}
+
+/* Estilos para el select */
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none; /* Elimina el estilo nativo del sistema operativo */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234CAF50' width='18px' height='18px'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px top 50%;
+}
+
+/* Estilos para el mensaje de confirmación */
+#confirmation-message {
+    color: #4CAF50;
+    font-weight: bold;
+    margin-top: 10px;
+}
     </style>
     <body>
         <!-- Navbar (components/navbar) -->
@@ -250,15 +289,70 @@
                         id="dummyframe"
                         style="display: none"
                     ></iframe><br>
-                    <form action="/api/process_contact_form.php" target="dummyframe" method="post">
+                    <!--<form action="/api/process_contact_form.php" target="dummyframe" method="post">
                         <label for="name">Nombre:</label>
-                        <input type="text" id="name" name="name" required />                
+                        <input type="text" id="name" name="name" required />
+                        <label>Género:</label>
+
+                        <input type="radio" id="male" name="gender" value="male" required />
+                        <label for="male">Masculino</label>
+                        <input type="radio" id="female" name="gender" value="female" required />
+                        <label for="female">Femenino</label>
+                
                         <label for="email">Correo electrónico:</label>
-                        <input type="email" id="email" name="email" required />                
+                        <input type="email" id="email" name="email" required />
+
+                        <label for="notificaciones">¿Desea recibir notificaciones?</label>
+                        <input type="checkbox" id="notificaciones" name="notificaciones" value="yes" />
+
+                        <label for="carrera">Carrera:</label>
+                        <select id="carrera" name="carrera" required>
+                            <option value="Ingeniería en Computación">Ingeniería en Computación</option>
+                            <option value="Ingeniería Eléctrica Electrónica">Ingeniería Eléctrica Electrónica</option>
+                            <option value="Ingeniería en Telecomunicaciones">Ingeniería en Telecomunicaciones</option>
+                        </select>
+
                         <label for="message">Mensaje:</label>
                         <textarea id="message" name="message" rows="4" required></textarea>                
                         <button type="submit">Enviar Mensaje</button>
+                    </form>-->
+
+                    <form action="/api/process_contact_form.php" target="dummyframe" method="post">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required />
+                    
+                        <!-- Grupo de radio buttons para Género -->
+                        <label>Género:</label>     
+                        <div class="radio-container">                                                   
+                            <label for="Masculino">Masculino</label>
+                            <input type="radio" id="male" name="genero" value="Masculino" required />                            
+                            <label for="Femenino">Femenino</label>
+                            <input type="radio" id="female" name="genero" value="Femenino" required />
+                        </div>
+                    
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" required />
+                    
+                        <!-- Checkbox para notificaciones -->
+                        <div class="checkbox-container">
+                            <label for="notificaciones">¿Desea recibir notificaciones?</label>
+                            <input type="checkbox" id="notificaciones" name="notificaciones" value="yes" />
+                        </div>
+                    
+                        <label for="carrera">Carrera:</label>
+                        <select id="carrera" name="carrera" required>
+                            <option value="Ingeniería en Computación">Ingeniería en Computación</option>
+                            <option value="Ingeniería Eléctrica Electrónica">Ingeniería Eléctrica Electrónica</option>
+                            <option value="Ingeniería en Telecomunicaciones">Ingeniería en Telecomunicaciones</option>
+                        </select>
+                    
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    
+                        <button type="submit">Enviar Mensaje</button>
                     </form>
+                    
+
                 </div>
             </div>
         </section>

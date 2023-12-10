@@ -6,10 +6,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $email = $_POST["email"];
     $message = $_POST["message"];
+    $gender = $_POST["genero"];
+    $notifications = isset($_POST["notificaciones"]) ? $_POST["notificaciones"] : "No";
+    $carrera = $_POST["carrera"];
 
     // Insert data into the contact form table
-    $stmt = $conn->prepare("INSERT INTO contact_form_entries (name, email, description) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $name, $email, $message);
+    $stmt = $conn->prepare("INSERT INTO contact_form_entries (name, email, description, genero, notificaciones, carrera) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssss", $name, $email, $message, $gender, $notifications, $carrera);
 
     if ($stmt->execute()) {
         echo "Mensaje enviado correctamente.";
