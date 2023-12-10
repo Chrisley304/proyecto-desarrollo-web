@@ -85,20 +85,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <h1>Add New Project</h1>
+    <h1>Agregar proyecto</h1>
 
     <form action="add_project.php" method="post" enctype="multipart/form-data">
-        <label for="title">Title:</label>
+        <label for="title">Titulo:</label>
         <input type="text" name="title" required>
 
-        <label for="cover_image">Cover Image:</label>
+        <label for="cover_image">Portada:</label>
         <input type="file" name="cover_image" accept="image/*" required>
 
-        <label for="description">Description:</label>
+        <label for="description">Descripción:</label>
         <textarea name="description" rows="5" required></textarea>
 
-        <button type="submit">Add Project</button>
-        <a href="dashboard.php" id="return-btn" class="button">Return to Dashboard</a>
+        <button type="submit">Agregar Proyecto</button>
+        <a href="dashboard.php" id="return-btn" class="button">Regresar</a>
     </form>
 </body>
 

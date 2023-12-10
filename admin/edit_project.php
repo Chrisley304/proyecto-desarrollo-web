@@ -99,20 +99,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <h1>Edit Project</h1>
+    <h1>Editar Proyecto</h1>
 
     <form action="edit_project.php?id=<?php echo $project_id; ?>" method="post" enctype="multipart/form-data">
-        <label for="title">Title:</label>
+        <label for="title">Titulo:</label>
         <input type="text" name="title" value="<?php echo $project['title']; ?>" required>
 
-        <label for="cover_image">Cover Image:</label>
+        <label for="cover_image">Portada:</label>
         <input type="file" name="cover_image" accept="image/*">
 
-        <label for="description">Description:</label>
+        <label for="description">Descripción:</label>
         <textarea name="description" rows="5" required><?php echo $project['description']; ?></textarea>
 
-        <button type="submit">Update Project</button>
-        <a href="dashboard.php" id="return-btn" class="button">Return to Dashboard</a>
+        <button type="submit">Actualizar</button>
+        <a href="dashboard.php" id="return-btn" class="button">Regresar</a>
     </form>
 </body>
 

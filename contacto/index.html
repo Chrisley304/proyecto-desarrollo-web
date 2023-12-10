@@ -169,6 +169,48 @@
             display: block;
             margin-top: 20px;
         }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        @media screen and (max-width: 600px) {
+            form {
+                max-width: 100%;
+            }
+        }
     </style>
     <body>
         <!-- Navbar (components/navbar) -->
@@ -207,26 +249,14 @@
                         name="dummyframe"
                         id="dummyframe"
                         style="display: none"
-                    ></iframe>
-                    <form
-                        action="/api/process_contact_form.php"
-                        target="dummyframe"
-                        method="post"
-                    >
+                    ></iframe><br>
+                    <form action="/api/process_contact_form.php" target="dummyframe" method="post">
                         <label for="name">Nombre:</label>
-                        <input type="text" id="name" name="name" required />
-
+                        <input type="text" id="name" name="name" required />                
                         <label for="email">Correo electrónico:</label>
-                        <input type="email" id="email" name="email" required />
-
+                        <input type="email" id="email" name="email" required />                
                         <label for="message">Mensaje:</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="4"
-                            required
-                        ></textarea>
-
+                        <textarea id="message" name="message" rows="4" required></textarea>                
                         <button type="submit">Enviar Mensaje</button>
                     </form>
                 </div>
