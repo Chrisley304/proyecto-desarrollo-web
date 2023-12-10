@@ -172,8 +172,10 @@ $resultContactFormEntries = $conn->query($sqlContactFormEntries);
             <thead>
                 <tr>
                     <th>Nombre</th>
+                    <th>Género</th>
                     <th>Correo Electrónico</th>
-                    <th>Descripción</th>
+                    <th>Notificaciones</th>
+                    <th>Carrera</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -181,7 +183,10 @@ $resultContactFormEntries = $conn->query($sqlContactFormEntries);
                 <?php while ($row = $resultContactFormEntries->fetch_assoc()) { ?>
                     <tr>
                         <td><?php echo $row['name']; ?></td>
+                        <td><?php echo $row['genero']; ?></td>
                         <td><?php echo $row['email']; ?></td>
+                        <td><?php echo $row['notificaciones']; ?></td>
+                        <td><?php echo $row['carrera']; ?></td>
                         <td><?php echo $row['description']; ?></td>
                         <td class="action-buttons">
                             <a href="delete_contact.php?id=<?php echo $row['id']; ?>" class="delete-button">Eliminar</a>

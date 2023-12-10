@@ -35,5 +35,8 @@ CREATE TABLE contact_form_entries (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(255) NOT NULL,
-    description TEXT NOT NULL
+    description TEXT NOT NULL,
+    genero VARCHAR(20),
+    notificaciones VARCHAR(3),
+    carrera VARCHAR(100)
 );
